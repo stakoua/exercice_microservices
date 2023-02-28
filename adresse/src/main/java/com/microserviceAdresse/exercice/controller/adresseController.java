@@ -22,6 +22,12 @@ public class adresseController {
     public List<Adresse> getAllAdresse(){
         return adresseServiceImpl.getAllAdresses();
     }
+    @GetMapping("/{id}")
+    public ResponseEntity<Adresse> getAdresseById(@PathVariable int id){
+        Optional<Adresse>  adresseGetById=adresseServiceImpl.getAdresseById(id);
+        return ResponseEntity.status(201).body(adresseGetById.get());
+
+    }
     @PostMapping("/")
     public ResponseEntity<Adresse> createAdresse(@RequestBody  Adresse adresse){
         Optional<Adresse> adresseFound= adresseRepository.findAdresseByVille(adresse.getVille(), adresse.getRue(), adresse.getCodePostale());
@@ -32,4 +38,15 @@ public class adresseController {
         }else{return ResponseEntity.status(204).body(null); }
 
     }
+    @DeleteMapping("/{id}")
+    public void deleteAdresseById(@PathVariable int id){
+        adresseServiceImpl.deleteAdresse(id);
+
+    }
+   @PutMapping ("/{id}")
+   public ResponseEntity<Adresse> updateAdresse(@RequestBody Adresse adresse,@PathVariable Integer id){
+      return ResponseEntity.status(200).body( adresseServiceImpl.updateAdresse( adresse ,  id));
+
+   }
+
 }

@@ -16,8 +16,8 @@ public class AdresseServiceImpl implements IAdresseService {
     @Autowired
      AdresseRepository adresseRepository;
     @Override
-    public Adresse getAdresseById(int id) {
-        return adresseRepository.getReferenceById(id);
+    public Optional<Adresse> getAdresseById(int id) {
+        return adresseRepository.findById(id);
     }
 
     @Override

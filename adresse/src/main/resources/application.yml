@@ -1,20 +1,12 @@
 spring:
   application:
 
-
   # Database
   datasource:
-    type: com.zaxxer.hikari.HikariDataSource
-    hikari:
-      pool-name: ':::::::::::: Hikari DS Spades_1-MS POOL ::::::::::::'
-      connection-timeout: 60000
-      maximum-pool-size: 30
     driver-class-name: org.postgresql.Driver
     url: jdbc:postgresql://localhost:5432/adresse_db
     username: postgres
-
     password: admin
-
 
 
   jpa:
@@ -27,9 +19,6 @@ spring:
     properties:
       hibernate:
         format_sql: true
-
-
-
 
 #  Server configuration
 server:
