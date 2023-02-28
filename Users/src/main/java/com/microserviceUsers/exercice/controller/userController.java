@@ -1,5 +1,7 @@
 package com.microserviceUsers.exercice.controller;
 
+import com.microserviceUsers.exercice.Dto.ResponseDto;
+import com.microserviceUsers.exercice.Dto.UserDto;
 import com.microserviceUsers.exercice.model.User;
 import com.microserviceUsers.exercice.repository.UserRepository;
 import com.microserviceUsers.exercice.service.UserServiceImpl;
@@ -23,9 +25,9 @@ private final UserRepository userRepository;
     return userServiceImpl.getAllUser();
 }
 @GetMapping("/{id}")
-        public ResponseEntity<User> getUserById(@PathVariable int id){
-    Optional<User> userGetById=userServiceImpl.getUserById(id);
-    return ResponseEntity.status(201).body(userGetById.get());
+        public ResponseEntity<ResponseDto> getUserById(@PathVariable int id){
+    ResponseDto userGetById=userServiceImpl.getUserById(id);
+    return ResponseEntity.status(201).body(userGetById);
 
 }
 @PostMapping("/")

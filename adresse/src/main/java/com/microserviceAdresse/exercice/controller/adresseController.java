@@ -23,9 +23,9 @@ public class adresseController {
         return adresseServiceImpl.getAllAdresses();
     }
     @GetMapping("/{id}")
-    public ResponseEntity<Adresse> getAdresseById(@PathVariable int id){
+    public Adresse getAdresseById(@PathVariable int id){
         Optional<Adresse>  adresseGetById=adresseServiceImpl.getAdresseById(id);
-        return ResponseEntity.status(201).body(adresseGetById.get());
+        return adresseGetById.get();
 
     }
     @PostMapping("/")
