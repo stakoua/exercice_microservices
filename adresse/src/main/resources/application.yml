@@ -1,5 +1,6 @@
 spring:
   application:
+    name: ADRESSE-SERVICE
 
   # Database
   datasource:
