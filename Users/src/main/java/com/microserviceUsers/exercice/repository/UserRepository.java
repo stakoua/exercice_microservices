@@ -1,6 +1,7 @@
 package com.microserviceUsers.exercice.repository;
-
 import com.microserviceUsers.exercice.model.User;
+
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

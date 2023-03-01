@@ -1,14 +1,12 @@
 package com.microserviceUsers.exercice.controller;
 
 import com.microserviceUsers.exercice.Dto.ResponseDto;
-import com.microserviceUsers.exercice.Dto.UserDto;
 import com.microserviceUsers.exercice.model.User;
 import com.microserviceUsers.exercice.repository.UserRepository;
 import com.microserviceUsers.exercice.service.UserServiceImpl;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 
